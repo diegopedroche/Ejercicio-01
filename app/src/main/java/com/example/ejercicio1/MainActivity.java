@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(txtNombre.getText().toString().equals("")){
+                if(txtNombre.getText().toString().trim().isEmpty()){
                     Toast.makeText(MainActivity.this, "No hay nada escrito en el cuadro de texto", Toast.LENGTH_SHORT).show();
                 }else{
                     txtNombre.setText("");
@@ -36,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
         btnSaludar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!txtNombre.getText().toString().equals("")){
+                if(!txtNombre.getText().toString().trim().isEmpty()){
                     lbSaludo.setText("Hola "+txtNombre.getText()+", buenos días");
+                    lbSaludo.setText("");
                 }else{
                     Toast.makeText(MainActivity.this, "No hay nada escrito en el cuadro de texto", Toast.LENGTH_SHORT).show();
                     lbSaludo.setText("");
